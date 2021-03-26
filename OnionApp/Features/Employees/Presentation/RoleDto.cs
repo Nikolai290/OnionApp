@@ -1,7 +1,7 @@
 ﻿using OnionApp.Domain.Core.DbEntities;
 
 
-namespace OnionApp.Dto.Employee {
+namespace OnionApp.Features.Employees.Presentation {
     public class RoleDto {
         public int Id { get; set; }
         public string Name { get; set; }

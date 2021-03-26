@@ -20,4 +20,12 @@
     <ProjectReference Include="..\OnionApp.Domain.Interfaces\OnionApp.Domain.Interfaces.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Customers\Services\" />
+    <Folder Include="Features\Employees\Services\" />
+    <Folder Include="Features\Partners\Services\" />
+    <Folder Include="Features\Preferences\Services\" />
+    <Folder Include="Features\Promocodes\Services\" />
+  </ItemGroup>
+
 </Project>

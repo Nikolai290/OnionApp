@@ -32,7 +32,7 @@ namespace OnionApp.Domain.Interfaces.Abstractions.Repositories {
         public async Task DeleteAsync(int id) {
             await Session.DeleteAsync(GetByIdAsync(id));
         }
-
+        // TODO: implement method Dispose
         public void Dispose() {
             throw new NotImplementedException();
         }

@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnionApp.Domain.Core.DbEntities;
 using OnionApp.Domain.Interfaces.Abstractions.Repositories;
-using OnionApp.Dto.Employee;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnionApp.Controllers {
+namespace OnionApp.Features.Employees.Presentation {
 
     [ApiController]
     [Route("[controller]")]
@@ -57,6 +56,7 @@ namespace OnionApp.Controllers {
             RedirectToAction("GetAllEmployeeAsync");
         }
 
+        // TODO: implement other actions in EmployesController
         [HttpPut]
         public async Task UpdateEmployeeAsync(GetAllEmployeeDto employeeDto) {
 

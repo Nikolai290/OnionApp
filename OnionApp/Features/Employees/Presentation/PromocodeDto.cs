@@ -1,6 +1,6 @@
 ﻿using OnionApp.Domain.Core.DbEntities;
 
-namespace OnionApp.Dto.Employee {
+namespace OnionApp.Features.Employees.Presentation {
     public class PromocodeDto {
         public int Id { get; set; }
         public string Code { get; set; }

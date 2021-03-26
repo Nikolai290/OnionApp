@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OnionApp.Dto.Employee {
+namespace OnionApp.Features.Employees.Presentation {
     public class GetEmployeeByIdDto {
         public int Id { get; set; }
         public string Name { get; set; }

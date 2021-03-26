@@ -1,62 +1,16 @@
 ﻿using NHibernate;
+using OnionApp.Domain.Core.DbEntities;
 using OnionApp.Domain.Interfaces.Abstractions.Repositories;
 using System;
+using System.Collections.Generic;
 
 namespace OnionApp.Infrastructure.Data.Repositories {
-    public class UnitOfWork<TSession> : IUnitOfWork<TSession> where TSession : ISession {
+    public class UnitOfWork<TSession> : IUnitOfWork<TSession>, IUnitOfWork where TSession : ISession {
 
         private bool disposed = false;
-        
-        // TODO: think about how make a dictionary of repositories
-        private IEmployeeRepository employeeRepository;
-        private ICustomerRepository customerRepository;
-        private IPartnerRepository partnerRepository;
-        private IPreferenceRepository preferenceRepository;
-        private IPromocodeRepository promocodeRepository;
-        private IRoleRepository roleRepository;
 
-        public IEmployeeRepository Employees {
-            get {
-                if (employeeRepository == null)
-                    employeeRepository = new EmployeeRepository(Session);
-                return employeeRepository;
-            }
-        }
-        public ICustomerRepository Customers {
-            get {
-                if (customerRepository == null)
-                    customerRepository = new CustomerRepository(Session);
-                return customerRepository;
-            }
-        }
-        public IPartnerRepository Partners {
-            get {
-                if (partnerRepository == null)
-                    partnerRepository = new PartnerRepository(Session);
-                return partnerRepository;
-            }
-        }
-        public IPreferenceRepository Preferences {
-            get {
-                if (preferenceRepository == null)
-                    preferenceRepository = new PreferenceRepository(Session);
-                return preferenceRepository;
-            }
-        }
-        public IPromocodeRepository Promocodes {
-            get {
-                if (promocodeRepository == null)
-                    promocodeRepository = new PromocodeRepository(Session);
-                return promocodeRepository;
-            }
-        }
-        public IRoleRepository Roles {
-            get {
-                if (roleRepository == null)
-                    roleRepository = new RoleRepository(Session);
-                return roleRepository;
-            }
-        }
+        private Dictionary<Type, object> repositories;
+
 
         public TSession Session;
 
@@ -77,6 +31,15 @@ namespace OnionApp.Infrastructure.Data.Repositories {
                 }
                 disposed = true;
             }
+        }
+
+        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entity {
+            if (repositories == null)
+                repositories = new Dictionary<Type, object>();
+            var type = typeof(TEntity);
+            if (!repositories.ContainsKey(type))
+                repositories[type] = new BaseRepository<TEntity>(Session);
+            return (IRepository<TEntity>)repositories[type];
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using NHibernate;
+using OnionApp.Domain.Core.DbEntities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnionApp.Domain.Interfaces.Abstractions.Repositories {
     public interface IUnitOfWork : IDisposable {
@@ -9,5 +8,6 @@ namespace OnionApp.Domain.Interfaces.Abstractions.Repositories {
 
     public interface IUnitOfWork<TSession> : IUnitOfWork where TSession : ISession {
         TSession Session { get; }
+        IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entity;
     }
 }

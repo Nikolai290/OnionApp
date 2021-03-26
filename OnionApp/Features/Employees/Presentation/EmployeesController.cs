@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NHibernate;
 using OnionApp.Domain.Core.DbEntities;
 using OnionApp.Domain.Interfaces.Abstractions.Repositories;
 using System.Collections.Generic;
@@ -13,17 +14,19 @@ namespace OnionApp.Features.Employees.Presentation {
 
         private readonly IEmployeeRepository employeeRepository;
         private readonly IRepository<Role> roleRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-        public EmployeesController(IEmployeeRepository employeeRepository,
-            IRepository<Role> roleRepository) {
-            this.employeeRepository = employeeRepository;
-            this.roleRepository = roleRepository;
+        public EmployeesController(IUnitOfWork unitOfWork,
+            IEmployeeRepository employeeRepository) {
+            this.unitOfWork = unitOfWork;
+            this.employeeRepository = unitOfWork.getre;
+
         }
 
         // GET: Employees
         [HttpGet]
         public async Task<IList<GetAllEmployeeDto>> GetAllEmployeeAsync() {
-            var employees = await employeeRepository.GetAllAsync();
+            var employees = employeeRepository.GetAll();
             // TODO: use mapper
             var employeesDto = employees.Select(x =>
             new GetAllEmployeeDto() {

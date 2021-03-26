@@ -12,6 +12,7 @@ namespace OnionApp.Infrastructure.Data.Repositories {
 
         protected readonly ISession Session;
 
+
         public BaseRepository(ISession session) {
             this.Session = session;
         }
@@ -32,24 +33,14 @@ namespace OnionApp.Infrastructure.Data.Repositories {
             await Session.DeleteAsync(GetByIdAsync(id));
         }
         // TODO: implement method Dispose
-        public void Dispose() {
-            throw new NotImplementedException();
-        }
 
         public IEnumerable<TEntity> GetAll() {
             return Session.Query<TEntity>().Where(x => !x.IsDeleted);
         }
 
-        public Task<IEnumerable<TEntity>> GetAllAsync() {
-            throw new NotImplementedException();
-        }
 
         public IEnumerable<TEntity> GetAllIncludeDeleted() {
             return Session.Query<TEntity>();
-        }
-
-        public Task<IEnumerable<TEntity>> GetAllIncludeDeletedAsync() {
-            throw new NotImplementedException();
         }
 
         public TEntity GetById(int id) {

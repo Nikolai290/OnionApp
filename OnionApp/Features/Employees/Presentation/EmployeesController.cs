@@ -24,6 +24,7 @@ namespace OnionApp.Features.Employees.Presentation {
         [HttpGet]
         public async Task<IList<GetAllEmployeeDto>> GetAllEmployeeAsync() {
             var employees = await employeeRepository.GetAllAsync();
+            // TODO: use mapper
             var employeesDto = employees.Select(x =>
             new GetAllEmployeeDto() {
                 Id = x.Id,

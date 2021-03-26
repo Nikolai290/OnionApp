@@ -2,7 +2,7 @@
 using System;
 
 namespace OnionApp.Domain.Interfaces.Abstractions.Repositories {
-    public interface ICustomerRepository : IDisposable, IRepository<Customer> {
+    public interface ICustomerRepository : IRepository<Customer> {
 
     }
 }

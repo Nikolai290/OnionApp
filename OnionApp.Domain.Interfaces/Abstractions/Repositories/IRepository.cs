@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 using OnionApp.Domain.Core.DbEntities;
 
 namespace OnionApp.Domain.Interfaces.Abstractions.Repositories {
-    public interface IRepository<TEntity> : IDisposable where TEntity : Entity {
+    public interface IRepository<TEntity>  where TEntity : Entity {
 
 
         // TODO: delete some methods in IRepository
-        Task<IEnumerable<TEntity>> GetAllIncludeDeletedAsync();
-        Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(int id);
         Task CreateAsync(TEntity item);
         Task UpdateAsync(TEntity item);

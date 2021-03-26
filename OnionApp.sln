@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionApp", "OnionApp\OnionApp.csproj", "{5945D6F5-8E81-4DF0-A348-E645A00D923C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8C98EA0D-4678-42B9-83EA-BB95F0A52BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionApp.Domain.Core", "OnionApp.Domain.Core\OnionApp.Domain.Core.csproj", "{A513D1DD-8FBF-44F1-A4D5-445030EE6BAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionApp.Domain.Interfaces", "OnionApp.Domain.Interfaces\OnionApp.Domain.Interfaces.csproj", "{1D6E0E22-E8F6-4EFB-B845-F999FE634129}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0350C667-8287-4302-AA7A-9AA3D461479F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{51CC636F-CB6F-4193-AD95-0FEE9C5D78B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionApp.Infrastructure.Data", "OnionApp.Infrastructure.Data\OnionApp.Infrastructure.Data.csproj", "{BEBEEDA1-3CBD-47E8-95FC-91A3E238D3AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionApp.InfraStructure.Business", "OnionApp.InfraStructure.Business\OnionApp.InfraStructure.Business.csproj", "{5F20D27F-070E-41E7-BCFB-B43B7F6C05CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5945D6F5-8E81-4DF0-A348-E645A00D923C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5945D6F5-8E81-4DF0-A348-E645A00D923C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5945D6F5-8E81-4DF0-A348-E645A00D923C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5945D6F5-8E81-4DF0-A348-E645A00D923C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A513D1DD-8FBF-44F1-A4D5-445030EE6BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A513D1DD-8FBF-44F1-A4D5-445030EE6BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A513D1DD-8FBF-44F1-A4D5-445030EE6BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A513D1DD-8FBF-44F1-A4D5-445030EE6BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6E0E22-E8F6-4EFB-B845-F999FE634129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6E0E22-E8F6-4EFB-B845-F999FE634129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6E0E22-E8F6-4EFB-B845-F999FE634129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6E0E22-E8F6-4EFB-B845-F999FE634129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEBEEDA1-3CBD-47E8-95FC-91A3E238D3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEBEEDA1-3CBD-47E8-95FC-91A3E238D3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEBEEDA1-3CBD-47E8-95FC-91A3E238D3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEBEEDA1-3CBD-47E8-95FC-91A3E238D3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F20D27F-070E-41E7-BCFB-B43B7F6C05CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F20D27F-070E-41E7-BCFB-B43B7F6C05CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F20D27F-070E-41E7-BCFB-B43B7F6C05CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F20D27F-070E-41E7-BCFB-B43B7F6C05CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A513D1DD-8FBF-44F1-A4D5-445030EE6BAA} = {8C98EA0D-4678-42B9-83EA-BB95F0A52BA3}
+		{1D6E0E22-E8F6-4EFB-B845-F999FE634129} = {8C98EA0D-4678-42B9-83EA-BB95F0A52BA3}
+		{BEBEEDA1-3CBD-47E8-95FC-91A3E238D3AE} = {51CC636F-CB6F-4193-AD95-0FEE9C5D78B8}
+		{5F20D27F-070E-41E7-BCFB-B43B7F6C05CD} = {51CC636F-CB6F-4193-AD95-0FEE9C5D78B8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FCCBEDE-F774-476E-91D4-C93D9C402D9E}
+	EndGlobalSection
+EndGlobal

@@ -19,7 +19,7 @@ namespace OnionApp.Features.Employees.Presentation {
         public EmployeesController(IUnitOfWork unitOfWork,
             IEmployeeRepository employeeRepository) {
             this.unitOfWork = unitOfWork;
-            this.employeeRepository = unitOfWork.getre;
+            this.employeeRepository = employeeRepository;
 
         }
 
